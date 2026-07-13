@@ -10,11 +10,11 @@ const orderItemSchema = new mongoose.Schema({
 
 const orderSchema = new mongoose.Schema({
   user: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "User",
+    type:     mongoose.Schema.Types.ObjectId,
+    ref:      "User",
     required: true,
   },
-  items: [orderItemSchema],
+  items:           [orderItemSchema],
   deliveryAddress: {
     fullName: String,
     phone:    String,
@@ -23,16 +23,28 @@ const orderSchema = new mongoose.Schema({
     state:    String,
   },
   paymentMethod: {
-    type: String,
+    type:    String,
     default: "Paystack",
   },
+  paymentReference: {
+    type:    String,
+    default: null,
+  },
   isPaid: {
-    type: Boolean,
+    type:    Boolean,
     default: false,
   },
+  paidAt: {
+    type:    Date,
+    default: null,
+  },
   isDelivered: {
-    type: Boolean,
+    type:    Boolean,
     default: false,
+  },
+  deliveredAt: {
+    type:    Date,
+    default: null,
   },
   totalPrice:    { type: Number, required: true },
   deliveryPrice: { type: Number, default: 2500  },

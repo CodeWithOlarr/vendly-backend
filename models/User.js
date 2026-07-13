@@ -1,43 +1,58 @@
 import mongoose from "mongoose"
-import bcrypt from "bcryptjs"
+import bcrypt   from "bcryptjs"
 
 const userSchema = new mongoose.Schema({
   name: {
-    type: String,
+    type:     String,
     required: [true, "Name is required"],
-    trim: true,
+    trim:     true,
   },
   email: {
-    type: String,
+    type:     String,
     required: [true, "Email is required"],
-    unique: true,
+    unique:   true,
     lowercase: true,
-    trim: true,
+    trim:     true,
   },
   phone: {
-    type: String,
+    type:     String,
     required: [true, "Phone is required"],
   },
   password: {
-    type: String,
+    type:     String,
     required: [true, "Password is required"],
     minlength: 6,
   },
   role: {
-    type: String,
-    enum: ["buyer", "vendor", "admin"],
+    type:    String,
+    enum:    ["buyer", "vendor", "admin"],
     default: "buyer",
   },
   avatar: {
-    type: String,
+    type:    String,
     default: "",
   },
+
+  // ✅ OTP fields
+  isVerified: {
+    type:    Boolean,
+    default: false,
+  },
+  otp: {
+    type:    String,
+    default: null,
+  },
+  otpExpiry: {
+    type:    Date,
+    default: null,
+  },
+
 }, { timestamps: true })
 
 // Hash password before saving
 userSchema.pre("save", async function () {
   if (!this.isModified("password")) return
-  const salt = await bcrypt.genSalt(12)
+  const salt    = await bcrypt.genSalt(12)
   this.password = await bcrypt.hash(this.password, salt)
 })
 
