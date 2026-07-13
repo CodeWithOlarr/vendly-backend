@@ -44,7 +44,7 @@ app.use("/api/chat", chatRoutes)
 
 // Health check
 app.get("/", (req, res) => {
-  res.json({ message: "ShopHub API is running" })
+  res.json({ message: "Vendly API is running" })
 })
 
 const PORT = process.env.PORT || 5000
