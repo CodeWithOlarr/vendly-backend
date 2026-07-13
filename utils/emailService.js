@@ -102,7 +102,7 @@ export async function sendWelcomeEmail(to, name) {
                   <p style="margin:0 0 28px;color:#6b7280;font-size:15px;line-height:1.6;">
                     Your Vendly account is now verified and active. Shop from hundreds of trusted vendors across Nigeria!
                   </p>
-                  <a href="http://localhost:5173"
+                  <a href="https://vendly-store.vercel.app/"
                     style="display:inline-block;background:#2563EB;color:#ffffff;text-decoration:none;padding:14px 32px;border-radius:50px;font-weight:700;font-size:15px;">
                     Start Shopping →
                   </a>
@@ -311,7 +311,7 @@ export async function sendOrderConfirmationEmail(to, name, order) {
               <!-- CTA -->
               <tr>
                 <td style="padding:0 40px 32px;text-align:center;">
-                  <a href="http://localhost:5173/profile"
+                  <a href="https://vendly-store.vercel.app/profile"
                     style="display:inline-block;background:#2563EB;color:#ffffff;text-decoration:none;padding:14px 32px;border-radius:50px;font-weight:700;font-size:15px;">
                     Track Your Order →
                   </a>

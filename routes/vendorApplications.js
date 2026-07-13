@@ -165,7 +165,7 @@ async function sendApplicationEmail(userName, storeName, userEmail) {
         <p><strong>Email:</strong> ${userEmail}</p>
         <p><strong>Store Name:</strong> ${storeName}</p>
         <p>Login to your admin dashboard to review and approve or reject this application.</p>
-        <a href="http://localhost:5173/admin/vendor-applications"
+        <a href="https://vendly-store.vercel.app/admin/vendor-applications"
           style="display:inline-block;background:#2563EB;color:#fff;padding:12px 28px;border-radius:50px;text-decoration:none;font-weight:700;margin-top:16px;">
           Review Application →
         </a>
@@ -187,7 +187,7 @@ async function sendApprovalEmail(to, name, storeName) {
         <h2 style="color:#1f2937;">Congratulations, ${name}! 🎉</h2>
         <p style="color:#6b7280;">Your vendor application for <strong>${storeName}</strong> has been approved!</p>
         <p style="color:#6b7280;">You can now login to your Vendly account and access your Vendor Dashboard to start adding products.</p>
-        <a href="http://localhost:5173/vendor/dashboard"
+        <a href="https://vendly-store.vercel.app/vendor/dashboard"
           style="display:inline-block;background:#2563EB;color:#fff;padding:12px 28px;border-radius:50px;text-decoration:none;font-weight:700;margin-top:16px;">
           Go to Vendor Dashboard →
         </a>
