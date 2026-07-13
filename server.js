@@ -23,7 +23,7 @@ const app = express()
 app.use(cors({ 
     origin: [
     "http://localhost:5173",
-    "https://shophub-frontend-tawny.vercel.app"
+    "https://vendly-store.vercel.app"
     ]
 }))
 
