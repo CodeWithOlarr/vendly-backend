@@ -14,6 +14,7 @@ import paymentRoutes from "./routes/payment.js"
 import vendorDashboardRoutes    from "./routes/vendor.js"
 import vendorApplicationRoutes  from "./routes/vendorApplications.js"
 import chatRoutes from "./routes/chat.js"
+import { keepAlive } from "./utils/keepAlive.js"
 
 connectDB()
 
@@ -50,4 +51,5 @@ app.get("/", (req, res) => {
 const PORT = process.env.PORT || 5000
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`)
+  keepAlive(`https://vendly-backend-1nby.onrender.com/`)
 })
