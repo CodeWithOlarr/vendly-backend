@@ -24,7 +24,8 @@ const app = express()
 app.use(cors({ 
     origin: [
     "http://localhost:5173",
-    "https://vendly-store.vercel.app"
+    // "https://vendly-store.vercel.app",
+    "https://vendly-frontend-theta.vercel.app"
     ]
 }))
 
